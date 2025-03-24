@@ -3,28 +3,48 @@
 
 interface LibroProps {
     codigo : number;
-    nombre: string;
+    nombre : string;
+    edicion : string;
+    stock : number;
+    rating : string;
     precio: number;
     imagen: string;
   }
 
-export default function Libro( { codigo, nombre, precio, imagen }: LibroProps) {
+  export default function Libro( { codigo, nombre, edicion, stock, rating, precio, imagen }: LibroProps) {
     return (
-        <div className="flex flex-col items-center gap-6 p-7 md:flex-row md:gap-8 rounded-2xl">
-            <div>
-                <img src={imagen} className="size-48 shadow-xl rounded-md" />
+        <article className="h-[320px] w-[320px] rounded-2xl bg-white shadow-xl cursor-pointer hover:shadow-neutral-900 transition-all">
+            
+            <div className="text-center px-8 py-3" >
+                <img src={imagen} className="mx-auto w-[180px] h-[180px] rounded-full object-cover" />
+                <h2 className="mt-2 text-2xl font-bold" > {nombre} </h2>
+                <p className="mt-1 text-sm text-[gray] font-light" > {edicion} </p>
             </div>
-            <div className="flex items-center md:items-start">
-                <span className="text-2xl font-stretch-50%"> {nombre}</span>
-                <span className="font-medium text-sky-500">Hola</span>
 
-                <span className="flex gap-2 font-medium text-gray-600 dark:text-gray-400">
-                    <span>No. {codigo}</span>
-                    <span>·</span>
-                    <span>S/ {precio}</span>
-                </span>
+            <div className="flex justify-center text-center items-center" >
+                <div>
+                    <h3 className="text-[20px] font-bold" > {stock} </h3>
+                    <p className="text-xs font-light text-[gray]" > Stock </p>
+                </div>
 
+            
+                    <hr className="mx-4 h-4 w-[1px] border-none bg-black/50" />
+                
+                    <div>
+                        <h3 className="text-[20px] font-bold" > {rating} </h3>
+                        <p className="text-xs font-light text-[gray]" > Rating </p>
+                    </div>
+
+                
+                    <hr className="mx-4 h-4 w-[1px] border-none bg-black/50" />   
+
+                    <div>
+                        <h3 className="text-[20px] font-bold" > S/ {precio}</h3>
+                        <p className="text-xs font-light text-[gray]" > Precio </p>
+                    </div>
             </div>
-        </div>
+            
+        </article>
     );
+
 }
