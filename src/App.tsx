@@ -3,10 +3,6 @@ import './App.css';
 import Top from './componentes/top';
 import Libro from './componentes/libros';
 
-import itemLibro1 from "../src/assets/imagenes/imagen_6.jpg";
-import itemLibro2 from "../src/assets/imagenes/imagen_7.jpg";
-import itemLibro3 from "../src/assets/imagenes/imagen_9.jpg";
-
 import itemTop1 from "../src/assets/imagenes/imagen_1.jpg";
 import itemTop2 from "../src/assets/imagenes/imagen_2.jpg";
 import itemTop3 from "../src/assets/imagenes/imagen_3.jpg";
@@ -15,6 +11,13 @@ import itemTop5 from "../src/assets/imagenes/imagen_5.jpg";
 import itemTop6 from "../src/assets/imagenes/imagen_6.jpg";
 import itemTop7 from "../src/assets/imagenes/imagen_7.jpg";
 import itemTop8 from "../src/assets/imagenes/imagen_8.jpg";
+
+import itemLibro1 from "../src/assets/imagenes/imagen_6.jpg";
+import itemLibro2 from "../src/assets/imagenes/imagen_7.jpg";
+import itemLibro3 from "../src/assets/imagenes/imagen_9.jpg";
+import itemLibro4 from "../src/assets/imagenes/imagen_10.jpg";
+import itemLibro5 from "../src/assets/imagenes/imagen_11.jpg";
+import itemLibro6 from "../src/assets/imagenes/imagen_12.jpg";
 
 const arrayTop = [
   {
@@ -64,7 +67,7 @@ const arrayLibros = [
   {
     id: 1,
     name: "Spiderman",
-    edition: "1era Edicion 2025",
+    edition: "Las aventuras de Peter y Miles",
     stock: 30,
     rating: "5/5",
     price: 90,
@@ -75,7 +78,7 @@ const arrayLibros = [
     name: "X-Men",
     edition: "Edicion 90s",
     stock: 20,
-    rating: "4/5",
+    rating: "5/5",
     price: 70,
     image: itemLibro2
   },
@@ -84,9 +87,36 @@ const arrayLibros = [
     name: "Batman",
     edition: "Dark Night Especial",
     stock: 10,
-    rating: "3/5",
+    rating: "4/5",
     price: 60,
     image: itemLibro3
+  },
+  {
+    id: 4,
+    name: "C.Marvel",
+    edition: "La Heriona mas Poderosa",
+    stock: 15,
+    rating: "3/5",
+    price: 55,
+    image: itemLibro4
+  },
+  {
+    id: 5,
+    name: "Thanos",
+    edition: "El Guantalete del Infinito",
+    stock: 18,
+    rating: "3/5",
+    price: 65,
+    image: itemLibro5
+  },
+  {
+    id: 6,
+    name: "Wonder Women",
+    edition: "El Comienzo de una nueva Era",
+    stock: 22,
+    rating: "2/5",
+    price: 45,
+    image: itemLibro6
   }
 ];
 
