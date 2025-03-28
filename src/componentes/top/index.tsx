@@ -1,8 +1,4 @@
-interface TopProps {
-    codigo : number;
-    numero : number;
-    imagen : string;
-}
+import { TopProps } from "../../types/Top";
 
 export default function Top( { codigo, numero, imagen }: TopProps) {
     

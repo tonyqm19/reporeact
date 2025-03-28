@@ -1,15 +1,8 @@
 //-- import productImage from "../src/assets/imagenes/imagen_1.jpg"; //-- ESTA RUTA ACA NO FUNCIONA
 //-- import productImage from "../../assets/imagenes/imagen_1.jpg";  //-- AQUI FUNCIONA
+import { Link } from "react-router";
 
-interface LibroProps {
-    codigo : number;
-    nombre : string;
-    edicion : string;
-    stock : number;
-    rating : string;
-    precio: number;
-    imagen: string;
-  }
+import { LibroProps } from "../../types/Libro";
 
   export default function Libro( { codigo, nombre, edicion, stock, rating, precio, imagen }: LibroProps) {
     return (
@@ -17,7 +10,11 @@ interface LibroProps {
             
             <div className="text-center px-8 py-3" >
                 <img src={imagen} className="mx-auto w-[180px] h-[180px] rounded-full object-cover" />
-                <h2 className="mt-2 text-2xl font-bold" > {nombre} </h2>
+               
+                <Link to={`/libro/${codigo}`}  className="mt-2 text-2xl font-bold" > 
+                    {nombre} 
+                </Link>
+                
                 <p className="mt-1 text-sm text-[gray] font-light" > {edicion} </p>
             </div>
 
