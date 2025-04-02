@@ -18,6 +18,7 @@ import itemLibro3 from "../src/assets/imagenes/imagen_9.jpg";
 import itemLibro4 from "../src/assets/imagenes/imagen_10.jpg";
 import itemLibro5 from "../src/assets/imagenes/imagen_11.jpg";
 import itemLibro6 from "../src/assets/imagenes/imagen_12.jpg";
+import { Layout } from './Layout';
 
 const arrayTop = [
   {
@@ -124,10 +125,11 @@ const arrayLibros = [
 function App() {
 
   return (
-    <div className="max-w-[1110px]" >
+    <Layout>
+    <div className="" >
 
-      <section className="p-4">
-        <article className="rounded-2xl bg-gray-900 p-8 shadow-sm">
+      <section className="p-3">
+        <article className="rounded-2xl bg-gray-900 p-5 shadow-sm">
 
           <div className="flex items-center justify-between">
             <h3 className="text-[20px] font-bold text-[white]" > Top de los mas Vendidos </h3>
@@ -151,7 +153,7 @@ function App() {
         </article>
       </section>
 
-      <section className="bg-gray-100 p-5 gap-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3" >
+      <section className="bg-gray-100 p-4 gap-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3" >
 
         {arrayLibros.map((itemLibro) => (
 
@@ -170,6 +172,7 @@ function App() {
       </section>
 
     </div>
+    </Layout>
 
   );
 

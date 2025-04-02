@@ -1,20 +1,32 @@
 import { useParams } from "react-router";
 import { useFetch } from "../../hooks/useFetch";
-import { ProductProps } from "../../types/Products";
+//import { ProductProps } from "../../types/Products";
 import { Layout } from "../../Layout";
+import { LibroProps } from "../../types/Libro";
+import { useContext } from "react";
+import { ShoppingCartContext } from "../../context";
 
 export default function LibroDetallePage(){
     const { codigo } = useParams();
     console.log(codigo);
+    const context = useContext(ShoppingCartContext);
 
     const {
-        data: product,
+        data: libroData,
         loading,
         error,
-      } = useFetch<ProductProps>(`https://fakestoreapi.com/products/${codigo}`);
+      } = useFetch<LibroProps>(`http://localhost:8080/Libro/buscarLibroPorId/${codigo}`);
+
+      const addToCart = (libro : LibroProps) => {
+        //logica de validacion
+        context.setCartProducts([...context.cartProducts, libro]);
+      };
+
+      //-- useFetch<ProductProps>(`https://fakestoreapi.com/products/${codigo}`);
+      //-- = useFetch<LibroProps>(`http://localhost:8080/Libro/buscarLibroPorId/{codigo}`);
     
       if (loading) {
-        return <p>Cargando producto...</p>;
+        return <p>Cargando Comics...</p> ;
       }
     
       if (error) {
@@ -26,19 +38,19 @@ export default function LibroDetallePage(){
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div className="image">
               <img
-                src={product?.image}
-                alt={product?.title}
+                src={libroData?.imagen}
+                alt={libroData?.nombre}
                 className="max-w-[400px]"
               />
             </div>
             <div className="information">
-              <h1 className="text-4xl font-bold mb-6">{product?.title}</h1>
-              <p className="text-3xl font-bold mb-6">${product?.price}</p>
-              <p className="text-gray-500">{product?.description}</p>
+              <h1 className="text-4xl font-bold mb-6">{libroData?.nombre}</h1>
+              <p className="text-3xl font-bold mb-6">S/ {libroData?.precio}</p>
+              <p className="text-gray-500">{libroData?.sinopsis}</p>
               <div className="my-6">
                 <button
                   className="bg-black text-white px-4 py-2 rounded-full cursor-pointer"
-                  onClick={() => console.log("agregado")}
+                  onClick={() => libroData && addToCart(libroData)}
                 >
                   Add to cart
                 </button>

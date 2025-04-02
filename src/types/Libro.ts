@@ -5,5 +5,6 @@ export interface LibroProps {
     stock : number;
     rating : string;
     precio: number;
+    sinopsis : string;
     imagen: string;
   }
