@@ -7,15 +7,15 @@ import { useContext } from "react";
 import { ShoppingCartContext } from "../../context";
 
 export default function LibroDetallePage(){
-    const { codigo } = useParams();
-    console.log(codigo);
+    const { tipo, codigo } = useParams();
+    console.log( codigo + " - " + tipo );
     const context = useContext(ShoppingCartContext);
 
     const {
         data: libroData,
         loading,
         error,
-      } = useFetch<LibroProps>(`http://localhost:8080/Libro/buscarLibroPorId/${codigo}`);
+      } = useFetch<LibroProps>(`http://localhost:8080/Libro/buscarLibroPorId/${tipo}/${codigo}`);
 
       const addToCart = (libro : LibroProps) => {
         //logica de validacion

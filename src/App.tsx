@@ -24,41 +24,49 @@ const arrayTop = [
   {
     id: 1,
     numero: 1,
+    tipo: "Top",
     image: itemTop1
   },
   {
     id: 2,
     numero: 2,
+    tipo: "Top",
     image: itemTop2
   },
   {
     id: 3,
     numero: 3,
+    tipo: "Top",
     image: itemTop3
   },
   {
     id: 4,
     numero: 4,
+    tipo: "Top",
     image: itemTop4
   },
   {
     id: 5,
     numero: 5,
+    tipo: "Top",
     image: itemTop5
   },
   {
     id: 6,
     numero: 6,
+    tipo: "Top",
     image: itemTop6
   },
   {
     id: 7,
     numero: 7,
+    tipo: "Top",
     image: itemTop7
   },
   {
     id: 8,
     numero: 8,
+    tipo: "Top",
     image: itemTop8
   }
 ]
@@ -68,7 +76,9 @@ const arrayLibros = [
   {
     id: 1,
     name: "Spiderman",
+    tipo: "Catalogo",
     edition: "Las aventuras de Peter y Miles",
+    sinopsis : "",
     stock: 30,
     rating: "5/5",
     price: 90,
@@ -77,7 +87,9 @@ const arrayLibros = [
   {
     id: 2,
     name: "X-Men",
+    tipo: "Catalogo",
     edition: "Edicion 90s",
+    sinopsis : "",
     stock: 20,
     rating: "5/5",
     price: 70,
@@ -86,7 +98,9 @@ const arrayLibros = [
   {
     id: 3,
     name: "Batman",
+    tipo: "Catalogo",
     edition: "Dark Night Especial",
+    sinopsis : "",
     stock: 10,
     rating: "4/5",
     price: 60,
@@ -95,7 +109,9 @@ const arrayLibros = [
   {
     id: 4,
     name: "C.Marvel",
+    tipo: "Catalogo",
     edition: "La Heriona mas Poderosa",
+    sinopsis : "",
     stock: 15,
     rating: "3/5",
     price: 55,
@@ -104,7 +120,9 @@ const arrayLibros = [
   {
     id: 5,
     name: "Thanos",
+    tipo: "Catalogo",
     edition: "El Guantalete del Infinito",
+    sinopsis : "",
     stock: 18,
     rating: "3/5",
     price: 65,
@@ -113,7 +131,9 @@ const arrayLibros = [
   {
     id: 6,
     name: "Wonder Women",
+    tipo: "Catalogo",
     edition: "El Comienzo de una nueva Era",
+    sinopsis : "",
     stock: 22,
     rating: "2/5",
     price: 45,
@@ -142,6 +162,7 @@ function App() {
 
               <Top key={itemTop.id}
                    codigo={itemTop.id}
+                   tipo={itemTop.tipo}
                    numero={itemTop.numero}
                    imagen={itemTop.image}
               />
@@ -160,11 +181,13 @@ function App() {
           <Libro key={itemLibro.id}
             codigo={itemLibro.id}
             nombre={itemLibro.name}
+            tipo={itemLibro.tipo}
             edicion={itemLibro.edition}
             stock={itemLibro.stock}
             rating={itemLibro.rating}
             precio={itemLibro.price}
             imagen={itemLibro.image}
+            sinopsis={itemLibro.sinopsis}
           />
 
         ))}
