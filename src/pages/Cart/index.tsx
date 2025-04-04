@@ -15,6 +15,12 @@ export default function Cart() {
 
   return (
     <Layout>
+      <div className="mb-1.5" >
+        <p className="underline font-bold"> Condiciones Generales : </p>
+        <p> <b>1.-</b> Solo <b> 4 </b> items permitidos en el carrito </p>
+        <p> <b>2.-</b> Maximo <b> S/200 </b> por compra </p>
+      </div>
+
       <div className="grid grid-cols-1 gap-4">
         {context.cartProducts.map((item) => (
           <div className="flex gap-4 items-center" key={item.codigo}>
@@ -50,7 +56,7 @@ export default function Cart() {
             .toFixed(2)}
         </p>
         <div className="flex justify-end">
-          <button className="bg-black text-white px-4 py-2 rounded-full cursor-pointer">
+          <button className="bg-black text-white px-4 py-2 rounded-full cursor-pointer" >
             Checkout
           </button>
         </div>

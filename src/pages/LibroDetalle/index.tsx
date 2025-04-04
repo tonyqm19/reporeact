@@ -18,8 +18,19 @@ export default function LibroDetallePage(){
       } = useFetch<LibroProps>(`http://localhost:8080/Libro/buscarLibroPorId/${tipo}/${codigo}`);
 
       const addToCart = (libro : LibroProps) => {
+        
+        const montoTotal = parseFloat(context.cartProducts.reduce((acc, item) => acc + item.precio, 0).toFixed(2));
+        const nuevoItemPrecio = libro.precio;
+        console.log("Carrito con monto del Item agregado: " + (montoTotal + nuevoItemPrecio));
         //logica de validacion
-        context.setCartProducts([...context.cartProducts, libro]);
+        if(context.cartProducts.length >= 4) {
+           alert("Maximo se podra agregar 4 Comics al carrito");
+        }else if( (montoTotal  + nuevoItemPrecio) > 200) {
+          alert("Solo Maximo S/ 200 por compra  => Precio Total (" + montoTotal +") + Nuevo Item (" + nuevoItemPrecio +" ) = (" + (montoTotal  + nuevoItemPrecio) + ")");
+        }else{
+          context.setCartProducts([...context.cartProducts, libro]);
+        }
+
       };
 
       //-- useFetch<ProductProps>(`https://fakestoreapi.com/products/${codigo}`);
@@ -35,7 +46,7 @@ export default function LibroDetallePage(){
 
       return (
         <Layout>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-2">
             <div className="image">
               <img
                 src={libroData?.imagen}
@@ -44,15 +55,18 @@ export default function LibroDetallePage(){
               />
             </div>
             <div className="information">
-              <h1 className="text-4xl font-bold mb-6">{libroData?.nombre}</h1>
-              <p className="text-3xl font-bold mb-6">S/ {libroData?.precio}</p>
+              <h1 className="text-4xl font-bold underline mb-4">{libroData?.nombre}</h1>
+              <p className="text-2xl font-bold mb-2"> Edicion : {libroData?.edicion}</p>
+              <p className="text-2xl font-bold mb-2"> Precio : S/ {libroData?.precio}</p>
+              <p className="text-2xl font-bold mb-2"> Rating : {libroData?.rating}</p>
+              <p className="text-2xl font-bold mb-2"> Stock : {libroData?.stock}</p>
               <p className="text-gray-500">{libroData?.sinopsis}</p>
               <div className="my-6">
                 <button
                   className="bg-black text-white px-4 py-2 rounded-full cursor-pointer"
                   onClick={() => libroData && addToCart(libroData)}
                 >
-                  Add to cart
+                  Agregar al Carrito
                 </button>
               </div>
             </div>
