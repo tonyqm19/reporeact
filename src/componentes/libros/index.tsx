@@ -5,6 +5,7 @@ import { Link } from "react-router";
 import { LibroProps } from "../../types/Libro";
 
   export default function Libro( { codigo, nombre, tipo, edicion, stock, rating, precio, imagen, sinopsis }: LibroProps) {
+    console.log(sinopsis);
     return (
         <Link to={`/libro/${tipo}/${codigo}`}  className="" > 
             <article className="h-[320px] w-[320px] rounded-2xl bg-white shadow-xl cursor-pointer hover:shadow-neutral-900 transition-all">
