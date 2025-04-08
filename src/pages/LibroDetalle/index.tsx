@@ -14,7 +14,7 @@ export default function LibroDetallePage(){
     const {
         data: libroData,
         loading,
-        error,
+        error
       } = useFetch<LibroProps>(`https://bk.eagroup.eanet-latam.com/proyectoempresa/Libro/buscarLibroPorId/${tipo}/${codigo}`);
 
       const addToCart = (libro : LibroProps) => {
