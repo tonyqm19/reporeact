@@ -15,7 +15,7 @@ export default function Cart() {
 
   return (
     <Layout>
-      <div className="mb-1.5" >
+      <div className="mb-1.5 text-[22px]" >
         <p className="underline font-bold"> Condiciones Generales : </p>
         <p> <b>1.-</b> Solo <b> 4 </b> items permitidos en el carrito </p>
         <p> <b>2.-</b> Maximo <b> S/200 </b> por compra </p>
@@ -28,7 +28,7 @@ export default function Cart() {
               <img
                 src={item.imagen}
                 alt={item.nombre}
-                className="max-w-[100px]"
+                className="max-w-[250px] max-h-[250px]"
               />
             </div>
             <div className="flex  gap-2">

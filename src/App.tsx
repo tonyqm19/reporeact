@@ -77,7 +77,7 @@ const arrayLibros = [
     id: 1,
     name: "Spiderman",
     tipo: "Catalogo",
-    edition: "Las aventuras de Peter y Miles",
+    edition: "Peter y Miles",
     sinopsis : "",
     stock: 30,
     rating: "5/5",
@@ -130,9 +130,9 @@ const arrayLibros = [
   },
   {
     id: 6,
-    name: "Wonder Women",
+    name: "M.Maravilla",
     tipo: "Catalogo",
-    edition: "El Comienzo de una nueva Era",
+    edition: "El Comienzo de una Era",
     sinopsis : "",
     stock: 22,
     rating: "2/5",
@@ -152,8 +152,8 @@ function App() {
         <article className="rounded-2xl bg-gray-900 p-5 shadow-sm">
 
           <div className="flex items-center justify-between">
-            <h3 className="text-[20px] font-bold text-[white]" > Top de los mas Vendidos </h3>
-            <a className="font-medium text-[white]" href="javascript:alert('En construccion')"> Ver mas </a>
+            <h3 className="text-[28px] font-bold text-[white]" > Top de los mas Vendidos </h3>
+            <a className="font-medium text-[24px] text-[white]" href="javascript:alert('En construccion')"> Ver mas </a>
           </div>
 
           <div className="mt-6 gap-8 w-[full] grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8">
@@ -174,7 +174,7 @@ function App() {
         </article>
       </section>
 
-      <section className="bg-gray-100 p-4 gap-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3" >
+      <section className="bg-gray-100 p-3 gap-13 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3" >
 
         {arrayLibros.map((itemLibro) => (
 

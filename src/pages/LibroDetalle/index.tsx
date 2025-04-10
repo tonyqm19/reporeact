@@ -51,7 +51,7 @@ export default function LibroDetallePage(){
               <img
                 src={libroData?.imagen}
                 alt={libroData?.nombre}
-                className="max-w-[400px]"
+                className="max-w-[650px]"
               />
             </div>
             <div className="information">
