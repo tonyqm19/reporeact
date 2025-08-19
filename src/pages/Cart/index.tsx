@@ -36,6 +36,10 @@ export default function Cart() {
               <p className="font-bold"> S/ {item.precio}</p>
               <button
                 className="text-red-500 cursor-pointer"
+                //-- 1.- ELIMINAR de un arreglo con FILTER
+                //-- filter: filtrara todos los items que sea diferente al codigo seleccionado (item.codigo).
+                //--         Ya que quiero eliminar ese item (item.codigo), entonces no debe incluirlo en el nuevo arreglo.
+                //--         Retorna el nuevo arreglo sin ese codigo seleccionado (item.codigo). 
                 onClick={() =>
                   context.setCartProducts(
                     context.cartProducts.filter(
@@ -49,9 +53,15 @@ export default function Cart() {
             </div>
           </div>
         ))}
+
+        
         <p className="font-bold flex justify-end">
           Total: S/
-          {context.cartProducts
+          { 
+          //-- 2.- SUMAR los valores de un arreglo con el metodo REDUCE
+          //-- let arr_nuevo = arreglo.reduce( (sum, item) => sum + item, 0 )
+          //--                          (acumulador, item) => sum + item , valor de inicializacion del "acumulador"(0) )
+          context.cartProducts
             .reduce((acc, item) => acc + item.precio, 0)
             .toFixed(2)}
         </p>

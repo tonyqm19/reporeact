@@ -15,9 +15,9 @@ export default function LibroDetallePage(){
         data: libroData,
         loading,
         error
-      } = useFetch<LibroProps>(`https://bk.eagroup.eanet-latam.com/proyectoempresa/Libro/buscarLibroPorId/${tipo}/${codigo}`);
+    } = useFetch<LibroProps>(`https://bk.eagroup.eanet-latam.com/proyectoempresa/Libro/buscarLibroPorId/${tipo}/${codigo}`);
 
-      const addToCart = (libro : LibroProps) => {
+    const addToCart = (libro : LibroProps) => {
         
         const montoTotal = parseFloat(context.cartProducts.reduce((acc, item) => acc + item.precio, 0).toFixed(2));
         const nuevoItemPrecio = libro.precio;
@@ -31,20 +31,20 @@ export default function LibroDetallePage(){
           context.setCartProducts([...context.cartProducts, libro]);
         }
 
-      };
+    };
 
-      //-- useFetch<ProductProps>(`https://fakestoreapi.com/products/${codigo}`);
-      //-- = useFetch<LibroProps>(`http://localhost:8080/Libro/buscarLibroPorId/{codigo}`);
+    //-- useFetch<ProductProps>(`https://fakestoreapi.com/products/${codigo}`);
+    //-- = useFetch<LibroProps>(`http://localhost:8080/Libro/buscarLibroPorId/{codigo}`);
     
-      if (loading) {
-        return <p>Cargando Comics...</p> ;
-      }
+    if (loading) {
+      return <p>Cargando Comics...</p> ;
+    }
     
-      if (error) {
-        return <p>Ocurrio un error</p>;
-      }
+    if (error) {
+      return <p>Ocurrio un error</p>;
+    }
 
-      return (
+    return (
         <Layout>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-2">
             <div className="image">
@@ -72,7 +72,7 @@ export default function LibroDetallePage(){
             </div>
           </div>
           </Layout>
-      );  
+    );  
 
     //-- return <h1> Pagina Detalle del Libro</h1>
 }
