@@ -25,49 +25,57 @@ const arrayTop = [
     id: 1,
     numero: 1,
     tipo: "Top",
-    image: itemTop1
+    image: itemTop1,
+    cantidad : 0
   },
   {
     id: 2,
     numero: 2,
     tipo: "Top",
-    image: itemTop2
+    image: itemTop2,
+    cantidad : 0
   },
   {
     id: 3,
     numero: 3,
     tipo: "Top",
-    image: itemTop3
+    image: itemTop3,
+    cantidad : 0
   },
   {
     id: 4,
     numero: 4,
     tipo: "Top",
-    image: itemTop4
+    image: itemTop4,
+    cantidad : 0
   },
   {
     id: 5,
     numero: 5,
     tipo: "Top",
-    image: itemTop5
+    image: itemTop5,
+    cantidad : 0
   },
   {
     id: 6,
     numero: 6,
     tipo: "Top",
-    image: itemTop6
+    image: itemTop6,
+    cantidad : 0
   },
   {
     id: 7,
     numero: 7,
     tipo: "Top",
-    image: itemTop7
+    image: itemTop7,
+    cantidad : 0
   },
   {
     id: 8,
     numero: 8,
     tipo: "Top",
-    image: itemTop8
+    image: itemTop8,
+    cantidad : 0
   }
 ]
 
@@ -82,7 +90,8 @@ const arrayLibros = [
     stock: 30,
     rating: "5/5",
     price: 90,
-    image: itemLibro1
+    image: itemLibro1,
+    cantidad : 0
   },
   {
     id: 2,
@@ -93,7 +102,8 @@ const arrayLibros = [
     stock: 20,
     rating: "5/5",
     price: 70,
-    image: itemLibro2
+    image: itemLibro2,
+    cantidad : 0
   },
   {
     id: 3,
@@ -104,7 +114,8 @@ const arrayLibros = [
     stock: 10,
     rating: "4/5",
     price: 60,
-    image: itemLibro3
+    image: itemLibro3,
+    cantidad : 0
   },
   {
     id: 4,
@@ -115,7 +126,8 @@ const arrayLibros = [
     stock: 15,
     rating: "3/5",
     price: 55,
-    image: itemLibro4
+    image: itemLibro4,
+    cantidad : 0
   },
   {
     id: 5,
@@ -126,7 +138,8 @@ const arrayLibros = [
     stock: 18,
     rating: "3/5",
     price: 65,
-    image: itemLibro5
+    image: itemLibro5,
+    cantidad : 0
   },
   {
     id: 6,
@@ -137,7 +150,8 @@ const arrayLibros = [
     stock: 22,
     rating: "2/5",
     price: 45,
-    image: itemLibro6
+    image: itemLibro6,
+    cantidad : 0
   }
 ];
 
@@ -165,6 +179,7 @@ function App() {
                    tipo={itemTop.tipo}
                    numero={itemTop.numero}
                    imagen={itemTop.image}
+                   cantidad={itemTop.cantidad}
               />
 
             ))}
@@ -188,6 +203,7 @@ function App() {
             precio={itemLibro.price}
             imagen={itemLibro.image}
             sinopsis={itemLibro.sinopsis}
+            cantidad={itemLibro.cantidad}
           />
 
         ))}

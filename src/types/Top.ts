@@ -3,4 +3,5 @@ export interface TopProps {
     tipo : string;
     numero : number;
     imagen : string;
+    cantidad : number;
 }

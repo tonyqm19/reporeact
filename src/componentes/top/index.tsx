@@ -1,8 +1,8 @@
 import { Link } from "react-router";
 import { TopProps } from "../../types/Top";
 
-export default function Top( { codigo, tipo, numero, imagen }: TopProps) {
-    
+export default function Top( { codigo, tipo, numero, imagen, cantidad }: TopProps) {
+    //-- console.log(" cantidad :" + cantidad);
     return (
       <Link to={`/libro/${tipo}/${codigo}`}  className="" > 
         <div style={{ "--bg-image": `url(${imagen})` } as React.CSSProperties}

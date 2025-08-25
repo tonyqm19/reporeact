@@ -8,4 +8,5 @@ export interface LibroProps {
     precio: number;
     sinopsis : string;
     imagen: string;
+    cantidad : number;
   }

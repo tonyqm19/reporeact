@@ -20,7 +20,13 @@ export default function Navbar() {
           <Link to="/cart" className="relative">
             <CartItem />
             <span className="bg-red-400 text-white px-2 py-1 rounded-full text-[11px] absolute -top-3 -right-3">
-              {context.cartProducts.length}
+              {
+                //-- Longitud del carrito 
+                //-- context.cartProducts.length
+                
+                //-- La cantidad Total
+                context.cartProducts.reduce((acc, item) => acc + item.cantidad , 0)
+              }
             </span>
           </Link>
 

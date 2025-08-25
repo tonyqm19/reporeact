@@ -4,8 +4,8 @@ import { Link } from "react-router";
 
 import { LibroProps } from "../../types/Libro";
 
-  export default function Libro( { codigo, nombre, tipo, edicion, stock, rating, precio, imagen, sinopsis }: LibroProps) {
-    console.log(sinopsis);
+  export default function Libro( { codigo, nombre, tipo, edicion, stock, rating, precio, imagen, sinopsis, cantidad }: LibroProps) {
+    //console.log("sinopsis: "+sinopsis + " cantidad :" + cantidad);
     return (
         <Link to={`/libro/${tipo}/${codigo}`}  className="mx-auto" > 
             <article className="w-[330px] h-[480px] rounded-2xl bg-white shadow-xl cursor-pointer hover:shadow-neutral-950 transition-all">
